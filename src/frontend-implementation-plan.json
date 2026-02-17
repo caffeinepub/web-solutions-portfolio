@@ -1,0 +1,240 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Web Solutions Portfolio — Single-page responsive site with polished UI/UX",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement a responsive single-page layout with section-based navigation (Hero, About, Services, Projects, Skills, Contact, Footer) and a mobile-collapsed menu.",
+      "acceptanceCriteria": [
+        "A landing page is implemented with distinct sections at minimum: Hero, About, Services (Web Solutions), Projects/Case Studies, Skills/Tech Stack, Contact, Footer.",
+        "A top navigation allows jumping to each section (anchors or equivalent) and works on mobile via a collapsed menu.",
+        "Layout is fully responsive across common breakpoints (mobile/tablet/desktop) without horizontal scrolling."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page layout composing all required sections and a sticky top navigation that scrolls to section anchors; include a mobile navigation using shadcn-ui components (e.g., Sheet, Button) for a collapsed menu. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "create",
+          "description": "Add a reusable top navigation component with anchor links to each section and a mobile collapsed menu using shadcn-ui (e.g., Sheet, Button). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create Hero section with headline/subheadline, primary call-to-action buttons (scroll to Projects/Contact), and hero background image rendered from static assets."
+        },
+        {
+          "path": "frontend/src/components/sections/AboutSection.tsx",
+          "operation": "create",
+          "description": "Create About section content with responsive typography and layout (two-column on desktop, stacked on mobile)."
+        },
+        {
+          "path": "frontend/src/components/sections/ServicesSection.tsx",
+          "operation": "create",
+          "description": "Create Services (Web Solutions) section using reusable service cards (compose shadcn-ui Card/Badge where appropriate). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ProjectsSection.tsx",
+          "operation": "create",
+          "description": "Create Projects/Case Studies section that renders a grid of project cards from structured data (wired to REQ-4 card component)."
+        },
+        {
+          "path": "frontend/src/components/sections/SkillsSection.tsx",
+          "operation": "create",
+          "description": "Create Skills/Tech Stack section using tag/badge-style presentation (compose shadcn-ui Badge). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create Contact section that hosts the validated contact form UI and its success/error states (wired to REQ-5)."
+        },
+        {
+          "path": "frontend/src/components/sections/FooterSection.tsx",
+          "operation": "create",
+          "description": "Create Footer section with brand mark, quick links to sections, and basic copyright line in English."
+        },
+        {
+          "path": "frontend/src/components/sections/SectionShell.tsx",
+          "operation": "create",
+          "description": "Add a small wrapper component to standardize section spacing, max-width container, and consistent headings for a polished, consistent layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply the user-provided background color consistently across the entire site with accessible contrast for text and surfaces.",
+      "acceptanceCriteria": [
+        "The primary page background uses the user-provided color consistently (no mismatched page/section backgrounds unless intentionally layered with transparent surfaces).",
+        "Text and UI surfaces maintain accessible contrast against the chosen background (e.g., readable headings/body text and visible focus states)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define site-wide design tokens (CSS variables) including the user-provided background color (as the global background) and foreground colors with accessible contrast; apply the background consistently to the root/body and section shells."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the app root uses the global background and that all sections use transparent/consistent surfaces so the background reads as site-wide; avoid per-section background overrides unless layered intentionally."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Establish a cohesive modern theme (typography, spacing, surfaces, states) with consistent interactive behavior and keyboard accessibility.",
+      "acceptanceCriteria": [
+        "A single, consistent theme is evident across headings, buttons, cards, and forms (typography scale, spacing, borders/radii, shadows).",
+        "Interactive elements include clear hover/active/focus states and keyboard navigability for primary actions and navigation."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global typography scale, section spacing defaults, focus-ring styling, and consistent surface styles using the existing Tailwind/CSS-variable approach (no edits under frontend/src/components/ui)."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend theme tokens (e.g., additional brand/accent colors, shadows, radii) mapped to CSS variables so all composed components share a coherent look."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "modify",
+          "description": "Ensure nav items and mobile menu controls have clear hover/active/focus states and are keyboard navigable using composed shadcn-ui components (e.g., Button/Sheet triggers). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/SectionShell.tsx",
+          "operation": "modify",
+          "description": "Standardize section heading styles, spacing, and optional subtle dividers/surfaces for a consistent modern UI across all sections."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add a Projects/Case Studies section with reusable project cards rendered from structured data including optional external links.",
+      "acceptanceCriteria": [
+        "At least 3 sample project cards render from a structured data list (not hardcoded repeated JSX).",
+        "Each card supports optional links and renders gracefully when a link is missing."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/projects.ts",
+          "operation": "create",
+          "description": "Create a structured list of at least 3 sample projects (title, description, tech stack tags, optional links, and thumbnail image paths) used to render cards."
+        },
+        {
+          "path": "frontend/src/components/projects/ProjectCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable ProjectCard component displaying title, description, tech tags, thumbnail, and optional external links; compose shadcn-ui Card/Badge/Button components for consistent styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ProjectsSection.tsx",
+          "operation": "modify",
+          "description": "Render the Projects grid by mapping over the structured projects data and using the reusable ProjectCard component; ensure responsive grid behavior and graceful handling of missing links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement a Contact section with client-side validation and clear success/error UI without external email services or secrets.",
+      "acceptanceCriteria": [
+        "Form validates required fields and email format before submission.",
+        "Submitting shows a visible success state (e.g., inline confirmation) and a failure state (e.g., inline error) without integrating any external email provider.",
+        "No secrets/API keys are required for the contact experience."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/contact/ContactForm.tsx",
+          "operation": "create",
+          "description": "Create a contact form (name, email, message) with client-side validation, accessible labels, and inline error messages; use composed shadcn-ui Input/Textarea/Button components for consistent UI. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useContactForm.ts",
+          "operation": "create",
+          "description": "Add a small hook to manage form state, validation (required fields + email format), submission simulation, and success/error state transitions entirely client-side (no secrets)."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Wire ContactForm into the Contact section and display clear success/failure UI states inline (e.g., confirmation panel, error alert) after submission."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add SEO and sharing metadata (title, description, favicon, Open Graph defaults) in English.",
+      "acceptanceCriteria": [
+        "Document title and meta description are set to match the portfolio branding.",
+        "A favicon is present and referenced in the app.",
+        "Open Graph metadata is present with reasonable defaults (title/description/image)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add meta description, Open Graph (title/description/image/type), and favicon links; keep all user-facing text in English and align title/description with portfolio branding; reference generated assets for favicon/OG image using static paths."
+        },
+        {
+          "path": "frontend/public/robots.txt",
+          "operation": "create",
+          "description": "Add a minimal robots.txt allowing indexing for basic SEO defaults."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Include generated static imagery (hero background, logo mark, project thumbnails) as frontend assets and render them in the UI without backend fetching.",
+      "acceptanceCriteria": [
+        "Generated images exist in `frontend/public/assets/generated` and are referenced directly by the frontend.",
+        "Images render correctly in the Hero and/or branding areas without being fetched from the backend."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/hero-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated image asset file to be used in the Hero/branding background."
+        },
+        {
+          "path": "frontend/public/assets/generated/logo-mark.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated logo mark asset file to be used in the top nav and/or footer branding, and for favicon/OG imagery where appropriate."
+        },
+        {
+          "path": "frontend/public/assets/generated/project-thumb-1.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated project thumbnail image asset file for Project 1."
+        },
+        {
+          "path": "frontend/public/assets/generated/project-thumb-2.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated project thumbnail image asset file for Project 2."
+        },
+        {
+          "path": "frontend/public/assets/generated/project-thumb-3.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated project thumbnail image asset file for Project 3."
+        },
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Reference and render the hero background image directly from frontend/public assets (use frontend/public/assets/generated/hero-bg.dim_1920x1080.png) and include the logo mark (frontend/public/assets/generated/logo-mark.dim_512x512.png) in the branding area."
+        },
+        {
+          "path": "frontend/src/data/projects.ts",
+          "operation": "modify",
+          "description": "Reference the three project thumbnail images directly from static assets (frontend/public/assets/generated/project-thumb-1.dim_1200x800.png, frontend/public/assets/generated/project-thumb-2.dim_1200x800.png, frontend/public/assets/generated/project-thumb-3.dim_1200x800.png) so project cards render without backend fetching."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/logo-mark.dim_512x512.png as the favicon and set Open Graph image to a generated asset (e.g., frontend/public/assets/generated/hero-bg.dim_1920x1080.png or the logo mark) so sharing previews work without backend fetching."
+        }
+      ]
+    }
+  ]
+}

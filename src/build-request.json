@@ -1,0 +1,151 @@
+{
+  "kind": "build_request",
+  "title": "Web Solutions & Portfolio Website (polished UI/UX with specified background color)",
+  "projectName": "Web Solutions Portfolio",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive single-page portfolio website for a web solutions provider with a polished UI/UX and clear section-based navigation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "create web solution  & portfolio website with following background color and good looking UI UX :"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A landing page is implemented with distinct sections at minimum: Hero, About, Services (Web Solutions), Projects/Case Studies, Skills/Tech Stack, Contact, Footer.",
+        "A top navigation allows jumping to each section (anchors or equivalent) and works on mobile via a collapsed menu.",
+        "Layout is fully responsive across common breakpoints (mobile/tablet/desktop) without horizontal scrolling."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a site-wide background color matching the user-provided background color, applied consistently across all sections and components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "with following background color"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The primary page background uses the user-provided color consistently (no mismatched page/section backgrounds unless intentionally layered with transparent surfaces).",
+        "Text and UI surfaces maintain accessible contrast against the chosen background (e.g., readable headings/body text and visible focus states)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Apply a coherent visual theme (colors beyond the background, typography, spacing, component styling) with a distinct modern style, used consistently across the site.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "good looking UI UX"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A single, consistent theme is evident across headings, buttons, cards, and forms (typography scale, spacing, borders/radii, shadows).",
+        "Interactive elements include clear hover/active/focus states and keyboard navigability for primary actions and navigation."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add a Projects/Case Studies section with reusable project cards that display: project title, short description, tech stack tags, and optional external links (e.g., live demo / repository).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 3 sample project cards render from a structured data list (not hardcoded repeated JSX).",
+        "Each card supports optional links and renders gracefully when a link is missing."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add a Contact section with a client-side validated contact form (name, email, message) that provides clear success/error UI without relying on external email services.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form validates required fields and email format before submission.",
+        "Submitting shows a visible success state (e.g., inline confirmation) and a failure state (e.g., inline error) without integrating any external email provider.",
+        "No secrets/API keys are required for the contact experience."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add basic SEO and sharing metadata (page title, description, favicon, Open Graph defaults) using English user-facing text.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Document title and meta description are set to match the portfolio branding.",
+        "A favicon is present and referenced in the app.",
+        "Open Graph metadata is present with reasonable defaults (title/description/image)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Generate and include minimal custom static imagery for the portfolio (hero/brand visuals) and render them from frontend static assets.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist in `frontend/public/assets/generated` and are referenced directly by the frontend.",
+        "Images render correctly in the Hero and/or branding areas without being fetched from the backend."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under `frontend/src/components/ui` (compose those UI components instead).",
+    "Do not modify any paths listed as immutable in the system context (e.g., `frontend/src/main.tsx`, Internet Identity hooks).",
+    "Keep the solution within a single Internet Computer backend actor if backend work becomes necessary later."
+  ],
+  "nonGoals": [
+    "No third-party authentication providers (only Internet Identity is supported, and it is not required for this portfolio).",
+    "No external database or third-party CMS integration.",
+    "No email delivery integration (e.g., SendGrid/SMTP) for the contact form.",
+    "No payments or checkout flows."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Abstract geometric hero background illustration in a modern tech style (hero-bg.dim_1920x1080.png)",
+      "Minimal monogram logo mark, high contrast, flat design (logo-mark.dim_512x512.png)",
+      "Three project thumbnail illustrations with consistent style and simple shapes (project-thumb-1.dim_1200x800.png)",
+      "Three project thumbnail illustrations with consistent style and simple shapes (project-thumb-2.dim_1200x800.png)",
+      "Three project thumbnail illustrations with consistent style and simple shapes (project-thumb-3.dim_1200x800.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for any user-facing text."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

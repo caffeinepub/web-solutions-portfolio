@@ -1,0 +1,151 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-single-page-portfolio-website-for-a-web-solutions-provider-with-a-polished-ui-ux-and-clear-section-based-navigation",
+      "featureTitle": "Create a responsive single-page portfolio website for a web solutions provider with a polished UI/UX and clear section-based navigation.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/components/sections/AboutSection.tsx",
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/components/sections/FooterSection.tsx",
+        "frontend/src/components/sections/HeroSection.tsx",
+        "frontend/src/components/sections/ProjectsSection.tsx",
+        "frontend/src/components/sections/SectionShell.tsx",
+        "frontend/src/components/sections/ServicesSection.tsx",
+        "frontend/src/components/sections/SkillsSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-site-wide-background-color-matching-the-user-provided-background-color-applied-consistently-across-all-sections-and-components",
+      "featureTitle": "Implement a site-wide background color matching the user-provided background color, applied consistently across all sections and components.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-visual-theme-colors-beyond-the-background-typography-spacing-component-styling-with-a-distinct-modern-style-used-consistently-across-the-site",
+      "featureTitle": "Apply a coherent visual theme (colors beyond the background, typography, spacing, component styling) with a distinct modern style, used consistently across the site.",
+      "files": [
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/components/sections/SectionShell.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-projects-case-studies-section-with-reusable-project-cards-that-display-project-title-short-description-tech-stack-tags-and-optional-external-links-e-g-live-demo-repository",
+      "featureTitle": "Add a Projects/Case Studies section with reusable project cards that display: project title, short description, tech stack tags, and optional external links (e.g., live demo / repository).",
+      "files": [
+        "frontend/src/components/projects/ProjectCard.tsx",
+        "frontend/src/components/sections/ProjectsSection.tsx",
+        "frontend/src/data/projects.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-contact-section-with-a-client-side-validated-contact-form-name-email-message-that-provides-clear-success-error-ui-without-relying-on-external-email-services",
+      "featureTitle": "Add a Contact section with a client-side validated contact form (name, email, message) that provides clear success/error UI without relying on external email services.",
+      "files": [
+        "frontend/src/components/contact/ContactForm.tsx",
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/hooks/useContactForm.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-basic-seo-and-sharing-metadata-page-title-description-favicon-open-graph-defaults-using-english-user-facing-text",
+      "featureTitle": "Add basic SEO and sharing metadata (page title, description, favicon, Open Graph defaults) using English user-facing text.",
+      "files": [
+        "frontend/index.html",
+        "frontend/public/robots.txt"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-include-minimal-custom-static-imagery-for-the-portfolio-hero-brand-visuals-and-render-them-from-frontend-static-assets",
+      "featureTitle": "Generate and include minimal custom static imagery for the portfolio (hero/brand visuals) and render them from frontend static assets.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/components/sections/HeroSection.tsx",
+        "frontend/src/data/projects.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

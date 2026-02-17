@@ -1,0 +1,21 @@
+{
+  "frontend/src/App.tsx": "Main application component that composes all sections (Hero, About, Services, Projects, Skills, Contact, Footer) with smooth scroll behavior and consistent layout structure.",
+  "frontend/src/components/layout/TopNav.tsx": "Sticky navigation header with logo, desktop menu, mobile sheet menu, scroll-based styling, and smooth anchor scrolling to sections.",
+  "frontend/src/components/sections/HeroSection.tsx": "Full-screen hero section with background image, animated gradient text, call-to-action buttons, and scroll indicator.",
+  "frontend/src/components/sections/AboutSection.tsx": "About section with company description and three feature cards highlighting precision, client focus, and efficiency.",
+  "frontend/src/components/sections/ServicesSection.tsx": "Services grid displaying six web solution offerings (web dev, responsive design, backend, UI/UX, performance, security) with icons, descriptions, and tech tags.",
+  "frontend/src/components/sections/ProjectsSection.tsx": "Projects showcase section that renders a responsive grid of project cards from structured data.",
+  "frontend/src/components/sections/SkillsSection.tsx": "Skills section displaying categorized technology badges across Frontend, Backend, Tools & Platforms, and Methodologies.",
+  "frontend/src/components/sections/ContactSection.tsx": "Contact section with company info (email, phone, location) and integrated contact form component.",
+  "frontend/src/components/sections/FooterSection.tsx": "Footer with brand, quick links, social media icons, copyright, and Caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/sections/SectionShell.tsx": "Reusable wrapper component providing consistent spacing, max-width container, and centered heading layout for all sections.",
+  "frontend/src/components/projects/ProjectCard.tsx": "Reusable project card component displaying thumbnail, title, description, tech stack badges, and optional live/GitHub links.",
+  "frontend/src/components/contact/ContactForm.tsx": "Validated contact form with name, email, and message fields, inline error display, loading states, and success/error UI.",
+  "frontend/src/data/projects.ts": "Structured data for three sample projects with titles, descriptions, thumbnails, tech stacks, and optional external links.",
+  "frontend/src/hooks/useContactForm.ts": "Custom hook managing contact form state, validation (required fields and email format), submission simulation, and status transitions.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks that will interact with backend methods (currently empty as backend has no methods).",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring deep navy/indigo background, vibrant cyan primary, purple accent, custom animations, and typography improvements.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with custom font families, glow shadows, and design tokens mapped to CSS variables for consistent theming.",
+  "frontend/index.html": "HTML entry point with SEO metadata, Open Graph tags, favicon references, and social media card configuration.",
+  "frontend/public/robots.txt": "Basic robots.txt file allowing all crawlers for SEO indexing."
+}

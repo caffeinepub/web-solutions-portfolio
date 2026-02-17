@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        /* Deep navy/indigo background with excellent contrast */
+        --background: 0.15 0.08 250;
+        --foreground: 0.98 0.01 250;
+        --card: 0.20 0.08 250;
+        --card-foreground: 0.98 0.01 250;
+        --popover: 0.22 0.08 250;
+        --popover-foreground: 0.98 0.01 250;
+        /* Vibrant cyan/blue primary */
+        --primary: 0.65 0.20 220;
+        --primary-foreground: 0.98 0.01 250;
+        /* Soft purple secondary */
+        --secondary: 0.30 0.10 270;
+        --secondary-foreground: 0.98 0.01 250;
+        --muted: 0.28 0.06 250;
+        --muted-foreground: 0.70 0.04 250;
+        /* Bright accent color */
+        --accent: 0.55 0.18 280;
+        --accent-foreground: 0.98 0.01 250;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.35 0.06 250;
+        --input: 0.35 0.06 250;
+        --ring: 0.65 0.20 220;
+        --chart-1: 0.646 0.222 41.116;
+        --chart-2: 0.6 0.118 184.704;
+        --chart-3: 0.398 0.07 227.392;
+        --chart-4: 0.828 0.189 84.429;
+        --chart-5: 0.769 0.188 70.08;
+        --sidebar: 0.20 0.08 250;
+        --sidebar-foreground: 0.98 0.01 250;
+        --sidebar-primary: 0.65 0.20 220;
+        --sidebar-primary-foreground: 0.98 0.01 250;
+        --sidebar-accent: 0.30 0.10 270;
+        --sidebar-accent-foreground: 0.98 0.01 250;
+        --sidebar-border: 0.35 0.06 250;
+        --sidebar-ring: 0.65 0.20 220;
+    }
+
+    .dark {
+        --background: 0.10 0.08 250;
+        --foreground: 0.98 0.01 250;
+        --card: 0.15 0.08 250;
+        --card-foreground: 0.98 0.01 250;
+        --popover: 0.18 0.08 250;
+        --popover-foreground: 0.98 0.01 250;
+        --primary: 0.70 0.22 220;
+        --primary-foreground: 0.10 0.08 250;
+        --secondary: 0.25 0.10 270;
+        --secondary-foreground: 0.98 0.01 250;
+        --muted: 0.22 0.06 250;
+        --muted-foreground: 0.65 0.04 250;
+        --accent: 0.50 0.18 280;
+        --accent-foreground: 0.98 0.01 250;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.98 0.01 250;
+        --border: 0.30 0.06 250;
+        --input: 0.30 0.06 250;
+        --ring: 0.70 0.22 220;
+        --chart-1: 0.488 0.243 264.376;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+        --sidebar: 0.15 0.08 250;
+        --sidebar-foreground: 0.98 0.01 250;
+        --sidebar-primary: 0.70 0.22 220;
+        --sidebar-primary-foreground: 0.10 0.08 250;
+        --sidebar-accent: 0.25 0.10 270;
+        --sidebar-accent-foreground: 0.98 0.01 250;
+        --sidebar-border: 0.30 0.06 250;
+        --sidebar-ring: 0.70 0.22 220;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+
+    /* Typography improvements */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold tracking-tight;
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Focus visible improvements */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+
+    /* Custom animations */
+    @keyframes gradient {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+    }
+}
